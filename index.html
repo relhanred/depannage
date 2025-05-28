@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dépannage Auto 24h/24 - Île-de-France | Service Rapide & Professionnel</title>
+    <meta name="description" content="Service de dépannage automobile et poids lourds 24h/24 en Île-de-France. Intervention rapide, professionnelle et au meilleur prix. Devis gratuit.">
+    <meta name="keywords" content="dépannage auto, panne voiture, remorquage, Île-de-France, Paris, 24h/24, poids lourds, batterie, pneu crevé">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://votre-domaine.com">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Dépannage Auto 24h/24 - Île-de-France">
+    <meta property="og:description" content="Service de dépannage automobile professionnel en Île-de-France. Intervention rapide 24h/24.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://votre-domaine.com">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "AutoRepair",
+        "name": "Dépannage Auto Île-de-France",
+        "description": "Service de dépannage automobile et poids lourds 24h/24",
+        "address": {
+            "@type": "PostalAddress",
+            "addressRegion": "Île-de-France",
+            "addressCountry": "FR"
+        },
+        "telephone": "06 51 57 58 64",
+        "openingHours": "Mo-Su 00:00-23:59",
+        "priceRange": "€€",
+        "areaServed": "Île-de-France"
+    }
+    </script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #ff6b35;
+            --secondary: #1a1a2e;
+            --accent: #16213e;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --gradient: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            overflow-x: hidden;
+        }
+        
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(26, 26, 46, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            transform: translateY(0);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        .cta-button {
+            background: var(--gradient);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255, 107, 53, 0.3);
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(135deg, rgba(26, 26, 46, 0.8), rgba(22, 33, 62, 0.8)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="%23333" stroke-width="1" opacity="0.1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            padding: 0 2rem;
+            animation: fadeInUp 1s ease;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn-primary {
+            background: var(--gradient);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            text-decoration: none;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid var(--primary);
+            padding: 1rem 2rem;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.4);
+        }
+        
+        .btn-secondary:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+        }
+        
+        /* Services Section */
+        .services {
+            padding: 5rem 5%;
+            background: var(--light);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 1rem;
+        }
+        
+        .section-title p {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 3px;
+            background: var(--gradient);
+            transition: left 0.3s;
+        }
+        
+        .service-card:hover::before {
+            left: 0;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+        
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 1.5rem;
+            color: white;
+        }
+        
+        .service-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--secondary);
+        }
+        
+        /* About Section */
+        .about {
+            padding: 5rem 5%;
+            background: white;
+        }
+        
+        /* Zone Coverage */
+        .coverage {
+            padding: 5rem 5%;
+            background: var(--light);
+            color: var(--dark);
+        }
+        
+        .coverage h2 {
+            color: var(--secondary);
+        }
+        
+        .zones-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+        
+        .zone-item {
+            background: white;
+            padding: 2rem 1rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .zone-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 3px;
+            background: var(--gradient);
+            transition: left 0.3s;
+        }
+        
+        .zone-item:hover::before {
+            left: 0;
+        }
+        
+        .zone-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+        
+        .zone-highlight {
+            grid-column: 1 / -1;
+            background: var(--gradient);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            margin-top: 2rem;
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 5rem 5%;
+            background: var(--light);
+        }
+        
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+        
+        .contact-info {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: var(--light);
+            border-radius: 10px;
+            transition: all 0.3s;
+        }
+        
+        .contact-item:hover {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+        
+        .emergency-banner {
+            background: var(--gradient);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 2rem;
+            animation: pulse 2s infinite;
+        }
+        
+        .emergency-banner h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .emergency-number {
+            font-size: 2rem;
+            font-weight: bold;
+            margin: 1rem 0;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--secondary);
+            color: white;
+            padding: 3rem 5% 1rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-section h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-section ul li a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-section ul li a:hover {
+            color: var(--primary);
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid #444;
+            padding-top: 1rem;
+            text-align: center;
+            color: #999;
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .logo {
+                font-size: 1.3rem;
+            }
+            
+            .cta-button {
+                padding: 0.6rem 1rem;
+                font-size: 0.9rem;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .zones-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+            
+            nav {
+                padding: 1rem 5%;
+            }
+        }
+        
+        /* Performance optimizations */
+        .service-card,
+        .zone-item,
+        .contact-item {
+            will-change: transform;
+        }
+        
+        img {
+            loading: lazy;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#" class="logo">🚗 Dépannage Pro</a>
+            <ul class="nav-links">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">À propos</a></li>
+                <li><a href="#zones">Zones</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <a href="tel:0651575864" class="cta-button">📞 Appel d'urgence</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Dépannage Auto 24h/24</h1>
+                <p>Service de dépannage automobile et poids lourds en Île-de-France. Intervention rapide, professionnelle et au meilleur prix partout en région parisienne.</p>
+                <div class="hero-buttons">
+                    <a href="tel:0651575864" class="btn-primary">📞 Appeler maintenant</a>
+                    <a href="#services" class="btn-secondary">Nos services</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="services">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Nos Services de Dépannage</h2>
+                    <p>Une gamme complète de services pour tous vos problèmes automobiles, disponible 24h/24 et 7j/7 en Île-de-France</p>
+                </div>
+                
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">🔧</div>
+                        <h3>Panne Mécanique</h3>
+                        <p>Diagnostic et réparation sur place de tous types de pannes mécaniques pour véhicules légers et poids lourds.</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">🔋</div>
+                        <h3>Batterie & Démarrage</h3>
+                        <p>Remplacement de batterie, aide au démarrage et diagnostic des problèmes électriques de votre véhicule.</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">🛞</div>
+                        <h3>Pneu Crevé</h3>
+                        <p>Changement de roue rapide et professionnel. Réparation ou remplacement de pneus sur place.</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">🚚</div>
+                        <h3>Remorquage</h3>
+                        <p>Service de remorquage sécurisé vers le garage de votre choix avec véhicules adaptés.</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">🗝️</div>
+                        <h3>Clés Perdues</h3>
+                        <p>Ouverture de véhicule en cas de clés oubliées à l'intérieur. Service rapide et sans dommage.</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">⛽</div>
+                        <h3>Panne Sèche</h3>
+                        <p>Approvisionnement en carburant d'urgence. Nous venons à vous avec le carburant nécessaire.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Dépannage Auto Express - Intervention Immédiate en Île-de-France</h2>
+                    <p>Spécialiste du dépannage automobile 24h/24 : voitures, utilitaires et poids lourds. Réparation sur place, remorquage et assistance routière dans toute la région parisienne.</p>
+                </div>
+                
+                <div class="about-benefits">
+                    <div class="benefit-item">
+                        <h3>🔧 Expert Multi-Marques Paris & Banlieue</h3>
+                        <p>Dépannage professionnel toutes marques : Renault, Peugeot, Citroën, Volkswagen, BMW, Mercedes... Diagnostic électronique et mécanique sur site en Île-de-France.</p>
+                    </div>
+                    
+                    <div class="benefit-item">
+                        <h3>🚨 Urgence 24h/24 - 7j/7</h3>
+                        <p>Équipe mobile disponible jour et nuit dans Paris, 92, 93, 94, 77, 78, 91, 95. Intervention garantie pour toute panne automobile.</p>
+                    </div>
+                    
+                    <div class="benefit-item">
+                        <h3>💶 Prix Fixe Sans Surprise</h3>
+                        <p>Tarification transparente annoncée avant intervention. Devis gratuit par téléphone. Pas de frais cachés pour vos dépannages auto en région parisienne.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="zones" class="coverage">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Dépannage Auto dans Toute l'Île-de-France</h2>
+                    <p>Intervention rapide dans les 8 départements franciliens. Équipes mobiles positionnées stratégiquement pour un service express 24h/24.</p>
+                </div>
+                
+                <div class="zones-grid">
+                    <div class="zone-item">
+                        <h4>🏛️ Paris (75)</h4>
+                        <p>Tous arrondissements<br>Centre historique</p>
+                    </div>
+                    <div class="zone-item">
+                        <h4>🏢 Hauts-de-Seine (92)</h4>
+                        <p>Zone ouest parisienne<br>Secteur tertiaire</p>
+                    </div>
+                    <div class="zone-item">
+                        <h4>🏭 Seine-Saint-Denis (93)</h4>
+                        <p>Zone nord-est<br>Couverture complète</p>
+                    </div>
+                    <div class="zone-item">
+                        <h4>🌳 Val-de-Marne (94)</h4>
+                        <p>Zone sud-est<br>Service prioritaire</p>
+                    </div>
+                    <div class="zone-item">
+                        <h4>🌲 Seine-et-Marne (77)</h4>
+                        <p>Grande couronne est<br>Couverture étendue</p>
+                    </div>
+                    <div class="zone-item">
+                        <h4>🏰 Yvelines (78)</h4>
+                        <p>Zone ouest francilienne<br>Dépannage garanti</p>
+                    </div>
+                    <div class="zone-item">
+                        <h4>🌿 Essonne (91)</h4>
+                        <p>Zone sud francilienne<br>Service assuré</p>
+                    </div>
+                    <div class="zone-item">
+                        <h4>✈️ Val-d'Oise (95)</h4>
+                        <p>Zone nord francilienne<br>Disponible 24h/24</p>
+                    </div>
+                    
+                    <div class="zone-highlight">
+                        <h3>🗺️ Couverture Complète Île-de-France</h3>
+                        <p>Dépannage automobile garanti sur autoroutes A1, A4, A6, A86, périphérique parisien et toutes routes départementales. Intervention d'urgence partout en région parisienne.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Contactez-nous</h2>
+                    <p>Une urgence ? Besoin d'informations ? Nous sommes là pour vous aider</p>
+                </div>
+                
+                <div class="emergency-banner">
+                    <h3>🚨 Urgence 24h/24</h3>
+                    <div class="emergency-number">06 51 57 58 64</div>
+                    <p>Intervention rapide partout en Île-de-France</p>
+                </div>
+                
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <h3>Informations de Contact</h3>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">📞</div>
+                            <div>
+                                <strong>Téléphone mobile</strong><br>
+                                <a href="tel:0651575864" style="color: inherit; text-decoration: none;">06 51 57 58 64</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">📍</div>
+                            <div>
+                                <strong>Zone d'intervention</strong><br>
+                                Île-de-France complète
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">🕒</div>
+                            <div>
+                                <strong>Horaires</strong><br>
+                                24h/24 - 7j/7 - 365j/an
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-info">
+                        <h3>Devis & Informations</h3>
+                        <div style="background: var(--light); padding: 1.5rem; border-radius: 10px; margin-bottom: 1.5rem;">
+                            <h4 style="color: var(--primary); margin-bottom: 0.5rem;">📋 Devis Gratuit par Téléphone</h4>
+                            <p>Besoin d'un devis ? Contactez-nous directement au <strong><a href="tel:0651575864" style="color: var(--primary); text-decoration: none;">06 51 57 58 64</a></strong> pour obtenir une estimation gratuite et personnalisée de votre dépannage.</p>
+                        </div>
+                        
+                        <h4>Pourquoi Nous Choisir ?</h4>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="padding: 0.5rem 0; border-bottom: 1px solid #eee;">✅ Devis gratuit par téléphone</li>
+                            <li style="padding: 0.5rem 0; border-bottom: 1px solid #eee;">✅ Intervention rapide garantie</li>
+                            <li style="padding: 0.5rem 0; border-bottom: 1px solid #eee;">✅ Tarifs transparents et compétitifs</li>
+                            <li style="padding: 0.5rem 0; border-bottom: 1px solid #eee;">✅ Techniciens certifiés et expérimentés</li>
+                            <li style="padding: 0.5rem 0; border-bottom: 1px solid #eee;">✅ Service client disponible 24h/24</li>
+                            <li style="padding: 0.5rem 0;">✅ Garantie sur toutes nos interventions</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Dépannage Pro</h3>
+                    <p>Votre partenaire de confiance pour tous vos dépannages automobiles en Île-de-France. Service professionnel 24h/24.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="#services">Panne mécanique</a></li>
+                        <li><a href="#services">Batterie et démarrage</a></li>
+                        <li><a href="#services">Pneu crevé</a></li>
+                        <li><a href="#services">Remorquage</a></li>
+                        <li><a href="#services">Clés perdues</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Zones</h3>
+                    <ul>
+                        <li>Paris (75)</li>
+                        <li>Hauts-de-Seine (92)</li>
+                        <li>Seine-Saint-Denis (93)</li>
+                        <li>Val-de-Marne (94)</li>
+                        <li>Toute l'Île-de-France</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact Urgence</h3>
+                    <p><strong>📞 <a href="tel:0651575864" style="color: var(--primary); text-decoration: none;">06 51 57 58 64</a></strong></p>
+                    <p>🕒 24h/24 - 7j/7</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Dépannage Pro - Tous droits réservés | Mentions légales | CGV</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Optimisation des performances et interactions
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animation au scroll
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+            
+            // Observer les éléments animés
+            document.querySelectorAll('.service-card, .benefit-item').forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(card);
+            });
+            
+            // Smooth scroll pour les ancres
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+            
+            // Header toujours visible (sticky)
+            window.addEventListener('scroll', () => {
+                const header = document.querySelector('header');
+                // Le header reste toujours visible
+                header.style.transform = 'translateY(0)';
+                
+                // Optionnel: changer l'opacité selon le scroll
+                if (window.scrollY > 100) {
+                    header.style.background = 'rgba(26, 26, 46, 0.98)';
+                } else {
+                    header.style.background = 'rgba(26, 26, 46, 0.95)';
+                }
+            });
+            
+            // Preload critical resources
+            const criticalCSS = document.createElement('link');
+            criticalCSS.rel = 'preload';
+            criticalCSS.as = 'style';
+            criticalCSS.href = 'data:text/css,'; // Placeholder pour éviter l'erreur
+            document.head.appendChild(criticalCSS);
+        });
+        
+        // Analytics tracking (placeholder)
+        function trackEvent(event, category) {
+            console.log(`Event: ${event}, Category: ${category}`);
+            // Intégrer Google Analytics ou autre solution
+        }
+        
+        // Track CTA clicks
+        document.querySelectorAll('.cta-button, .btn-primary').forEach(button => {
+            button.addEventListener('click', () => {
+                trackEvent('CTA_Click', 'Engagement');
+            });
+        });
+    </script>
+</body>
+</html>
